@@ -1,7 +1,7 @@
 from pathlib import Path
 
 class Site:
-    def __init__(self, source, dest, parser=None):
+    def __init__(self, source, dest, parsers=None):
         self.source = Path(source)
         self.dest = Path(dest)
         self.parsers = parsers or []
@@ -28,4 +28,4 @@ class Site:
             if path.is_dir():
                 self.create_dir(path)
             elif path.is_file():
-                self.run_paser(path)
+                self.run_parser(path)
